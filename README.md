@@ -25,28 +25,46 @@ W języku teorii grafów będzie to odpowiedź na pytanie, czy w grafie MJ, każ
 
 ### Przykład 1
 **Wejście:**
+
 2 3
+
 2 9
+
 3 4
+
 5 7
+
 5 9
+
 6 7
+
 7 8
+
 8 3
 
 **Wyjście:**
+
 NIE
 
 ### Przykład 2
 **Wejście:**
+
 1 1
+
 2 1
+
 2 2
+
 2 4
+
 3 1
+
 4 1
+
 4 2
+
 4 4
 
 **Wyjście:**
+
 TAK
