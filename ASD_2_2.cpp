@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 const int MAX_SIZE = 101;
 
 int** StworzGrafMJ(int przystanki, int polaczenia) {
@@ -28,9 +26,9 @@ int** PomnozPolaczenia(int** grafMJ, int rozmiar) {
 void WyswietlGrafMJ(int** graf, int przystanki, int polaczenia) {
     for (int i = 0; i < przystanki; i++) {
         for (int j = 0; j < polaczenia; j++) {
-            cout << graf[i][j] << " ";
+            std::cout << graf[i][j] << " ";
         }
-        cout << "\n";
+        std::cout << "\n";
     }
 }
 
@@ -45,18 +43,17 @@ bool CzyBedzieWycieczka(int** grafMJ, int** marszrutyZPrzesiadka, int rozmiar) {
     return true;
 }
 
-
 int main() {
     int najwiekszyPrzystanek = 0, i, j;
     int** grafMJ = StworzGrafMJ(MAX_SIZE, MAX_SIZE);
 
-    while (cin >> i >> j) {
+    while (std::cin >> i >> j) {
         grafMJ[i][j] = 1;
-        najwiekszyPrzystanek = max(najwiekszyPrzystanek, max(i, j));
+        najwiekszyPrzystanek = std::max(najwiekszyPrzystanek, std::max(i, j));
     }
 
     int** marszrutyZPrzesiadka = PomnozPolaczenia(grafMJ, najwiekszyPrzystanek + 1);
-    cout << (CzyBedzieWycieczka(grafMJ, marszrutyZPrzesiadka, najwiekszyPrzystanek + 1) ? "TAK" : "NIE") << endl;
+    std::cout << (CzyBedzieWycieczka(grafMJ, marszrutyZPrzesiadka, najwiekszyPrzystanek + 1) ? "TAK" : "NIE") << std::endl;
 
     return 0;
 }
